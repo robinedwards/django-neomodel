@@ -156,6 +156,30 @@ Requirements
    :alt: Join the chat at https://gitter.im/robinedwards/neomodel
    :target: https://gitter.im/robinedwards/neomodel?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 
+Docker Example
+===================
+
+
+Using Docker Compose.
+
+Commands to setup Docker Container::
+
+    # create local venv and install dependencies.
+    $ python3 -m venv venv; source venv/bin/activate; python setup.py develop; export DJANGO_SETTINGS_MODULE=tests.settings;
+    # Go to tests
+    $ cd tests/
+    $ ./manage.py install_labels
+    $ ./manage.py migrate
+    # create superuser to login to Django Admin portal
+    $ python manage.py createsuperuser --username admin  --email=admin@example.com
+    # Docker Command (Make sure Docker is running and up to date)
+    $ docker-compose up
+
+Go to http://localhost:7474/browser/
+
+Go to http://localhost:8000/admin/
+
+
 
 To Contribute
 ===================
